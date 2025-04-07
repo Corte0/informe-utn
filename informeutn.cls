@@ -62,6 +62,7 @@
 
 % UNIDADES UTILES
 % --- Resistencias ---
+\newcommand{\ohm}{\,\Omega}
 \newcommand{\kohm}{\,\mathrm{k}\Omega}
 \newcommand{\Mohm}{\,\mathrm{M}\Omega}
 
@@ -85,9 +86,33 @@
 \newcommand{\uH}{\,\mathrm{\mu H}}
 \newcommand{\nH}{\,\mathrm{nH}}
 
-% --- Señales ---
+% --- Frecuencia ---
 \newcommand{\Hz}{\,\mathrm{Hz}}
+
+% --- Potencia ---
+\newcommand{\W}{\,\mathrm{W}}       % Watt
+\newcommand{\mW}{\,\mathrm{mW}}     % miliWatt
+\newcommand{\kW}{\,\mathrm{kW}}     % kiloWatt
+
+% --- Energía ---
+\newcommand{\J}{\,\mathrm{J}}       % Joule
+\newcommand{\mJ}{\,\mathrm{mJ}}     % miliJoule
+\newcommand{\kJ}{\,\mathrm{kJ}}     % kiloJoule
+\newcommand{\Wh}{\,\mathrm{Wh}}     % Watt-hora
+\newcommand{\kWh}{\,\mathrm{kWh}}   % kiloWatt-hora
+
+% --- Temperatura ---
+\newcommand{\Celsius}{\,^\circ\mathrm{C}}    % Grados Celsius
+\newcommand{\Kelvin}{\,\mathrm{K}}           % Kelvin
+
+% --- Tiempo ---
 \newcommand{\s}{\,\mathrm{s}}
+\newcommand{\ms}{\,\mathrm{ms}}              % milisegundos
+\newcommand{\us}{\,\mathrm{\mu s}}           % microsegundos
+\newcommand{\ns}{\,\mathrm{ns}}
+
+% --- Otros ---
+\newcommand{\percent}{\,\%}
 
 % Estilo de capítulos y secciones
 \titleformat{\chapter}[hang]{\normalfont\LARGE\bfseries}{}{0pt}{}
