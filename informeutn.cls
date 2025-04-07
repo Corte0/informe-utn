@@ -31,6 +31,7 @@
 \RequirePackage{geometry}
 \RequirePackage{afterpage}
 \RequirePackage{etoolbox}
+\RequirePackage[main=spanish, provide=*]{babel}
 
 % Márgenes y geometría
 \geometry{
