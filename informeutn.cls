@@ -84,6 +84,10 @@
 \newcommand{\uH}{\,\mathrm{\mu H}}
 \newcommand{\nH}{\,\mathrm{nH}}
 
+% --- Señales ---
+\newcommand{\Hz}{\,\mathrm{Hz}}
+\newcommand{\s}{\,\mathrm{s}}
+
 % Estilo de capítulos y secciones
 \titleformat{\chapter}[hang]{\normalfont\LARGE\bfseries}{}{0pt}{}
 \titlespacing*{\chapter}{10pt}{0pt}{20pt}
