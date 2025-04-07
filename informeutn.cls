@@ -102,6 +102,9 @@
 % Índice
 \renewcommand{\contentsname}{Tabla de Contenidos}
 
+% Interlineado de las tablas
+\renewcommand{\arraystretch}{1.5}
+
 % Carátula automática
 \def\maketitle{
   \begin{titlepage}
