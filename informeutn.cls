@@ -32,6 +32,16 @@
 \RequirePackage{afterpage}
 \RequirePackage{etoolbox}
 \RequirePackage[main=spanish, provide=*]{babel}
+\RequirePackage{hyperref}
+
+% configuracion de hipervinculos
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 % Márgenes y geometría
 \geometry{
