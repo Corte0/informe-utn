@@ -26,6 +26,8 @@
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
 \RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\RequirePackage{circuitikz}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{geometry}
@@ -33,6 +35,11 @@
 \RequirePackage{etoolbox}
 \RequirePackage[main=spanish, provide=*]{babel}
 \RequirePackage{hyperref}
+\RequirePackage{caption}
+\RequirePackage{wrapfig}
+\usetikzlibrary{plotmarks}
+\captionsetup{justification=centering}
+\pgfplotsset{compat=1.18}
 
 % configuracion de hipervinculos
 \hypersetup{
