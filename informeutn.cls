@@ -89,6 +89,7 @@
 \newcommand{\mF}{\,\mathrm{mF}}
 
 % --- Tensión ---
+\newcommand{\uV}{\,\mathrm{\mu V}}
 \newcommand{\mV}{\,\mathrm{mV}}
 \newcommand{\V}{\,\mathrm{V}}
 \newcommand{\kV}{\,\mathrm{kV}}
