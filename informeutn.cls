@@ -80,6 +80,7 @@
 \newcommand{\nF}{\,\mathrm{nF}}
 \newcommand{\uF}{\,\mathrm{\mu F}}
 \newcommand{\mF}{\,\mathrm{mF}}
+\newcommand{\F}{\,\mathrm{F}}
 
 % --- Tensión ---
 \newcommand{\mV}{\,\mathrm{mV}}
