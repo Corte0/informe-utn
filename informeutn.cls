@@ -32,11 +32,10 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{geometry}
 \RequirePackage{afterpage}
-\RequirePackage{etoolbox}
 \RequirePackage[main=spanish, provide=*]{babel}
 \RequirePackage{hyperref}
 \RequirePackage{caption}
-\RequirePackage{wrapfig}
+\RequirePackage{wrapfig}  % queda para no romper retro compatibilidad, eliminar en próxima version
 \RequirePackage{siunitx}
 \RequirePackage{subcaption}
 \RequirePackage[backend=bibtex, style=alphabetic, sorting=ynt]{biblatex}
