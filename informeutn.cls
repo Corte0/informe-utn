@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{informeutn}[2026/09/05 Clase para informes UTN-FRC]
+\ProvidesClass{informeutn}[2025/04/05 Clase para informes UTN-FRC]
 
 \newif\ifchaptersright
 \chaptersrightfalse % valor por defecto
@@ -82,61 +82,61 @@
 \newcommand{\autores}[1]{\def\@autores{#1}}
 \newcommand{\fecha}[1]{\def\@fecha{#1}}
 
-% UNIDADES UTILES (Retrocompatibles vía siunitx)
+% UNIDADES UTILES
 % --- Resistencias ---
-\newcommand{\ohm}{\,\unit{\ohm}}
-\newcommand{\kohm}{\,\unit{\kilo\ohm}}
-\newcommand{\Mohm}{\,\unit{\mega\ohm}}
+\newcommand{\ohm}{\,\Omega}
+\newcommand{\kohm}{\,\mathrm{k}\Omega}
+\newcommand{\Mohm}{\,\mathrm{M}\Omega}
 
 % --- Capacitancias ---
-\newcommand{\nF}{\,\unit{\nano\farad}}
-\newcommand{\uF}{\,\unit{\micro\farad}}
-\newcommand{\mF}{\,\unit{\milli\farad}}
-\newcommand{\F}{\,\unit{\farad}}
+\newcommand{\nF}{\,\mathrm{nF}}
+\newcommand{\uF}{\,\mathrm{\mu F}}
+\newcommand{\mF}{\,\mathrm{mF}}
+\newcommand{\F}{\,\mathrm{F}}
 
 % --- Tensión ---
-\newcommand{\uV}{\,\unit{\micro\volt}}
-\newcommand{\mV}{\,\unit{\milli\volt}}
-\newcommand{\V}{\,\unit{\volt}}
-\newcommand{\kV}{\,\unit{\kilo\volt}}
+\newcommand{\uV}{\,\mathrm{\mu V}}
+\newcommand{\mV}{\,\mathrm{mV}}
+\newcommand{\V}{\,\mathrm{V}}
+\newcommand{\kV}{\,\mathrm{kV}}
 
 % --- Corriente ---
-\newcommand{\uA}{\,\unit{\micro\ampere}}
-\newcommand{\mA}{\,\unit{\milli\ampere}}
-\newcommand{\A}{\,\unit{\ampere}}
+\newcommand{\uA}{\,\mathrm{\mu A}}
+\newcommand{\mA}{\,\mathrm{mA}}
+\newcommand{\A}{\,\mathrm{A}}
 
 % --- Inductancias ---
-\newcommand{\mH}{\,\unit{\milli\henry}}
-\newcommand{\uH}{\,\unit{\micro\henry}}
-\newcommand{\nH}{\,\unit{\nano\henry}}
+\newcommand{\mH}{\,\mathrm{mH}}
+\newcommand{\uH}{\,\mathrm{\mu H}}
+\newcommand{\nH}{\,\mathrm{nH}}
 
 % --- Frecuencia ---
-\newcommand{\Hz}{\,\unit{\hertz}}
+\newcommand{\Hz}{\,\mathrm{Hz}}
 
 % --- Potencia ---
-\newcommand{\W}{\,\unit{\watt}}       % Watt
-\newcommand{\mW}{\,\unit{\milli\watt}} % miliWatt
-\newcommand{\kW}{\,\unit{\kilo\watt}}  % kiloWatt
+\newcommand{\W}{\,\mathrm{W}}       % Watt
+\newcommand{\mW}{\,\mathrm{mW}}     % miliWatt
+\newcommand{\kW}{\,\mathrm{kW}}     % kiloWatt
 
 % --- Energía ---
-\newcommand{\J}{\,\unit{\joule}}       % Joule
-\newcommand{\mJ}{\,\unit{\milli\joule}} % miliJoule
-\newcommand{\kJ}{\,\unit{\kilo\joule}}  % kiloJoule
-\newcommand{\Wh}{\,\unit{\watt\hour}}      % Watt-hora
-\newcommand{\kWh}{\,\unit{\kilo\watt\hour}} % kiloWatt-hora
+\newcommand{\J}{\,\mathrm{J}}       % Joule
+\newcommand{\mJ}{\,\mathrm{mJ}}     % miliJoule
+\newcommand{\kJ}{\,\mathrm{kJ}}     % kiloJoule
+\newcommand{\Wh}{\,\mathrm{Wh}}     % Watt-hora
+\newcommand{\kWh}{\,\mathrm{kWh}}   % kiloWatt-hora
 
 % --- Temperatura ---
-\newcommand{\Celsius}{\,\unit{\degreeCelsius}} % Grados Celsius
-\newcommand{\Kelvin}{\,\unit{\kelvin}}         % Kelvin
+\newcommand{\Celsius}{\,^\circ\mathrm{C}}    % Grados Celsius
+\newcommand{\Kelvin}{\,\mathrm{K}}           % Kelvin
 
 % --- Tiempo ---
-\newcommand{\s}{\,\unit{\second}}
-\newcommand{\ms}{\,\unit{\milli\second}}       % milisegundos
-\newcommand{\us}{\,\unit{\micro\second}}       % microsegundos
-\newcommand{\ns}{\,\unit{\nano\second}}
+\newcommand{\s}{\,\mathrm{s}}
+\newcommand{\ms}{\,\mathrm{ms}}              % milisegundos
+\newcommand{\us}{\,\mathrm{\mu s}}           % microsegundos
+\newcommand{\ns}{\,\mathrm{ns}}
 
 % --- Otros ---
-\newcommand{\percent}{\,\unit{\percent}}
+\newcommand{\percent}{\,\%}
 
 % Estilo de capítulos y secciones
 \titleformat{\chapter}[hang]{\normalfont\LARGE\bfseries}{}{0pt}{}
