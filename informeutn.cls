@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{informeutn}[2025/04/05 Clase para informes UTN-FRC]
+\ProvidesClass{informeutn}[2026/09/05 Clase para informes UTN-FRC]
 
 \newif\ifchaptersright
 \chaptersrightfalse % valor por defecto
@@ -32,11 +32,16 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{geometry}
 \RequirePackage{afterpage}
-\RequirePackage{etoolbox}
 \RequirePackage[main=spanish, provide=*]{babel}
 \RequirePackage{hyperref}
 \RequirePackage{caption}
-\RequirePackage{wrapfig}
+\RequirePackage{wrapfig}  % queda para no romper retro compatibilidad, eliminar en próxima version
+\RequirePackage{siunitx}
+\RequirePackage{subcaption}
+\RequirePackage[backend=bibtex, style=alphabetic, sorting=ynt]{biblatex}
+\RequirePackage{xcolor}
+\RequirePackage{pdfpages}
+\RequirePackage{listings}
 \usetikzlibrary{plotmarks}
 \captionsetup{justification=centering}
 \pgfplotsset{compat=1.18}
@@ -77,61 +82,61 @@
 \newcommand{\autores}[1]{\def\@autores{#1}}
 \newcommand{\fecha}[1]{\def\@fecha{#1}}
 
-% UNIDADES UTILES
+% UNIDADES UTILES (Retrocompatibles vía siunitx)
 % --- Resistencias ---
-\newcommand{\ohm}{\,\Omega}
-\newcommand{\kohm}{\,\mathrm{k}\Omega}
-\newcommand{\Mohm}{\,\mathrm{M}\Omega}
+\newcommand{\ohm}{\,\unit{\ohm}}
+\newcommand{\kohm}{\,\unit{\kilo\ohm}}
+\newcommand{\Mohm}{\,\unit{\mega\ohm}}
 
 % --- Capacitancias ---
-\newcommand{\nF}{\,\mathrm{nF}}
-\newcommand{\uF}{\,\mathrm{\mu F}}
-\newcommand{\mF}{\,\mathrm{mF}}
-\newcommand{\F}{\,\mathrm{F}}
+\newcommand{\nF}{\,\unit{\nano\farad}}
+\newcommand{\uF}{\,\unit{\micro\farad}}
+\newcommand{\mF}{\,\unit{\milli\farad}}
+\newcommand{\F}{\,\unit{\farad}}
 
 % --- Tensión ---
-\newcommand{\uV}{\,\mathrm{\mu V}}
-\newcommand{\mV}{\,\mathrm{mV}}
-\newcommand{\V}{\,\mathrm{V}}
-\newcommand{\kV}{\,\mathrm{kV}}
+\newcommand{\uV}{\,\unit{\micro\volt}}
+\newcommand{\mV}{\,\unit{\milli\volt}}
+\newcommand{\V}{\,\unit{\volt}}
+\newcommand{\kV}{\,\unit{\kilo\volt}}
 
 % --- Corriente ---
-\newcommand{\uA}{\,\mathrm{\mu A}}
-\newcommand{\mA}{\,\mathrm{mA}}
-\newcommand{\A}{\,\mathrm{A}}
+\newcommand{\uA}{\,\unit{\micro\ampere}}
+\newcommand{\mA}{\,\unit{\milli\ampere}}
+\newcommand{\A}{\,\unit{\ampere}}
 
 % --- Inductancias ---
-\newcommand{\mH}{\,\mathrm{mH}}
-\newcommand{\uH}{\,\mathrm{\mu H}}
-\newcommand{\nH}{\,\mathrm{nH}}
+\newcommand{\mH}{\,\unit{\milli\henry}}
+\newcommand{\uH}{\,\unit{\micro\henry}}
+\newcommand{\nH}{\,\unit{\nano\henry}}
 
 % --- Frecuencia ---
-\newcommand{\Hz}{\,\mathrm{Hz}}
+\newcommand{\Hz}{\,\unit{\hertz}}
 
 % --- Potencia ---
-\newcommand{\W}{\,\mathrm{W}}       % Watt
-\newcommand{\mW}{\,\mathrm{mW}}     % miliWatt
-\newcommand{\kW}{\,\mathrm{kW}}     % kiloWatt
+\newcommand{\W}{\,\unit{\watt}}       % Watt
+\newcommand{\mW}{\,\unit{\milli\watt}} % miliWatt
+\newcommand{\kW}{\,\unit{\kilo\watt}}  % kiloWatt
 
 % --- Energía ---
-\newcommand{\J}{\,\mathrm{J}}       % Joule
-\newcommand{\mJ}{\,\mathrm{mJ}}     % miliJoule
-\newcommand{\kJ}{\,\mathrm{kJ}}     % kiloJoule
-\newcommand{\Wh}{\,\mathrm{Wh}}     % Watt-hora
-\newcommand{\kWh}{\,\mathrm{kWh}}   % kiloWatt-hora
+\newcommand{\J}{\,\unit{\joule}}       % Joule
+\newcommand{\mJ}{\,\unit{\milli\joule}} % miliJoule
+\newcommand{\kJ}{\,\unit{\kilo\joule}}  % kiloJoule
+\newcommand{\Wh}{\,\unit{\watt\hour}}      % Watt-hora
+\newcommand{\kWh}{\,\unit{\kilo\watt\hour}} % kiloWatt-hora
 
 % --- Temperatura ---
-\newcommand{\Celsius}{\,^\circ\mathrm{C}}    % Grados Celsius
-\newcommand{\Kelvin}{\,\mathrm{K}}           % Kelvin
+\newcommand{\Celsius}{\,\unit{\degreeCelsius}} % Grados Celsius
+\newcommand{\Kelvin}{\,\unit{\kelvin}}         % Kelvin
 
 % --- Tiempo ---
-\newcommand{\s}{\,\mathrm{s}}
-\newcommand{\ms}{\,\mathrm{ms}}              % milisegundos
-\newcommand{\us}{\,\mathrm{\mu s}}           % microsegundos
-\newcommand{\ns}{\,\mathrm{ns}}
+\newcommand{\s}{\,\unit{\second}}
+\newcommand{\ms}{\,\unit{\milli\second}}       % milisegundos
+\newcommand{\us}{\,\unit{\micro\second}}       % microsegundos
+\newcommand{\ns}{\,\unit{\nano\second}}
 
 % --- Otros ---
-\newcommand{\percent}{\,\%}
+\newcommand{\percent}{\,\unit{\percent}}
 
 % Estilo de capítulos y secciones
 \titleformat{\chapter}[hang]{\normalfont\LARGE\bfseries}{}{0pt}{}
